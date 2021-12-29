@@ -4,6 +4,7 @@ import 'reflect-metadata';
 import { createConnection } from 'typeorm';
 import App  from "./src/app";
 import * as config from './src/ormconfig';
+import AuthenticationController from './src/api/authentication/authentication.controller';
 
 
 (async () => {
@@ -16,6 +17,8 @@ import * as config from './src/ormconfig';
   }
   const app = new App(
     [
+      new AuthenticationController(),
+
     ],
   );
   app.listen();
