@@ -1,13 +1,86 @@
-2021-12-31 08:05:11 error: uncaughtException: ⨯ Unable to compile TypeScript:
-[96msrc/authentication/authentication.controller.ts[0m:[93m47[0m:[93m1[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+2021-12-31 11:52:15 error: user_entity_1.default.findOne is not a function
+2021-12-31 11:54:11 error: uncaughtException: BaseEntity is not defined
+ReferenceError: BaseEntity is not defined
+    at Object.<anonymous> (/Users/new/Shopify-Test/src/authentication/user.entity.ts:13:20)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1056:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1059:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/Users/new/Shopify-Test/src/authentication/auth.service.ts:6:1)
+2021-12-31 12:03:16 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/wallet/wallet.service.ts[0m:[93m17[0m:[93m81[0m - [91merror[0m[90m TS1109: [0mExpression expected.
 
-[7m47[0m }
+[7m17[0m     const findUser: User = await this.WalletBalance.findOne({ where: { user_id: } });
+[7m  [0m [91m                                                                                ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/wallet/wallet.service.ts[0m:[93m17[0m:[93m81[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m17[0m     const findUser: User = await this.WalletBalance.findOne({ where: { user_id: } });
+[7m  [0m [91m                                                                                ~[0m
+
+    at createTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:513:12)
+    at reportTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:517:19)
+    at getOutput (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:955:34)
+    at Object.compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:968:32)
+    at Module.m._compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1056:42)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1059:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/Users/new/Shopify-Test/src/wallet/wallet.controller.ts:4:1)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1056:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1059:12)
+2021-12-31 15:44:27 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/wallet/wallet.service.ts[0m:[93m17[0m:[93m68[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m17[0m     const data = await this.WalletBalance.findOne({ user:user_id } });
+[7m  [0m [91m                                                                   ~[0m
+[96msrc/wallet/wallet.service.ts[0m:[93m17[0m:[93m69[0m - [91merror[0m[90m TS1068: [0mUnexpected token. A constructor, method, accessor, or property was expected.
+
+[7m17[0m     const data = await this.WalletBalance.findOne({ user:user_id } });
+[7m  [0m [91m                                                                    ~[0m
+[96msrc/wallet/wallet.service.ts[0m:[93m18[0m:[93m5[0m - [91merror[0m[90m TS1068: [0mUnexpected token. A constructor, method, accessor, or property was expected.
+
+[7m18[0m     return { data };
+[7m  [0m [91m    ~~~~~~[0m
+[96msrc/wallet/wallet.service.ts[0m:[93m19[0m:[93m3[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m19[0m   }
+[7m  [0m [91m  ~[0m
+[96msrc/wallet/wallet.service.ts[0m:[93m20[0m:[93m1[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m20[0m }
 [7m  [0m [91m~[0m
 
 TSError: ⨯ Unable to compile TypeScript:
-[96msrc/authentication/authentication.controller.ts[0m:[93m47[0m:[93m1[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+[96msrc/wallet/wallet.service.ts[0m:[93m17[0m:[93m68[0m - [91merror[0m[90m TS1005: [0m',' expected.
 
-[7m47[0m }
+[7m17[0m     const data = await this.WalletBalance.findOne({ user:user_id } });
+[7m  [0m [91m                                                                   ~[0m
+[96msrc/wallet/wallet.service.ts[0m:[93m17[0m:[93m69[0m - [91merror[0m[90m TS1068: [0mUnexpected token. A constructor, method, accessor, or property was expected.
+
+[7m17[0m     const data = await this.WalletBalance.findOne({ user:user_id } });
+[7m  [0m [91m                                                                    ~[0m
+[96msrc/wallet/wallet.service.ts[0m:[93m18[0m:[93m5[0m - [91merror[0m[90m TS1068: [0mUnexpected token. A constructor, method, accessor, or property was expected.
+
+[7m18[0m     return { data };
+[7m  [0m [91m    ~~~~~~[0m
+[96msrc/wallet/wallet.service.ts[0m:[93m19[0m:[93m3[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m19[0m   }
+[7m  [0m [91m  ~[0m
+[96msrc/wallet/wallet.service.ts[0m:[93m20[0m:[93m1[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m20[0m }
 [7m  [0m [91m~[0m
 
     at createTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:513:12)
@@ -20,24 +93,24 @@ TSError: ⨯ Unable to compile TypeScript:
     at Module.load (node:internal/modules/cjs/loader:981:32)
     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
     at Module.require (node:internal/modules/cjs/loader:1005:19)
-2021-12-31 08:05:38 error: uncaughtException: authentication_controller_1.default is not a constructor
-TypeError: authentication_controller_1.default is not a constructor
-    at /Users/new/Shopify-Test/src/server.ts:17:24
-    at step (/Users/new/Shopify-Test/src/server.ts:52:23)
-    at Object.next (/Users/new/Shopify-Test/src/server.ts:33:53)
-    at fulfilled (/Users/new/Shopify-Test/src/server.ts:24:58)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-2021-12-31 08:07:59 error: uncaughtException: ⨯ Unable to compile TypeScript:
-[96msrc/authentication/authentication.controller.ts[0m:[93m32[0m:[93m55[0m - [91merror[0m[90m TS1005: [0m',' expected.
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/Users/new/Shopify-Test/src/wallet/wallet.controller.ts:4:1)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1056:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1059:12)
+2021-12-31 15:47:35 error: jwt expired
+2021-12-31 15:58:27 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/wallet/wallet.entity.ts[0m:[93m124[0m:[93m41[0m - [91merror[0m[90m TS1005: [0m',' expected.
 
-[7m32[0m   public logIn = async (req: Request, res: Response,n ext: NextFunction): Promise<void> => {
-[7m  [0m [91m                                                      ~~~[0m
+[7m124[0m   @OneToMany(() => User, (user) => user {
+[7m   [0m [91m                                        ~[0m
 
 TSError: ⨯ Unable to compile TypeScript:
-[96msrc/authentication/authentication.controller.ts[0m:[93m32[0m:[93m55[0m - [91merror[0m[90m TS1005: [0m',' expected.
+[96msrc/wallet/wallet.entity.ts[0m:[93m124[0m:[93m41[0m - [91merror[0m[90m TS1005: [0m',' expected.
 
-[7m32[0m   public logIn = async (req: Request, res: Response,n ext: NextFunction): Promise<void> => {
-[7m  [0m [91m                                                      ~~~[0m
+[7m124[0m   @OneToMany(() => User, (user) => user {
+[7m   [0m [91m                                        ~[0m
 
     at createTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:513:12)
     at reportTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:517:19)
@@ -49,73 +122,23 @@ TSError: ⨯ Unable to compile TypeScript:
     at Module.load (node:internal/modules/cjs/loader:981:32)
     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
     at Module.require (node:internal/modules/cjs/loader:1005:19)
-2021-12-31 08:08:05 error: uncaughtException: authentication_controller_1.default is not a constructor
-TypeError: authentication_controller_1.default is not a constructor
-    at /Users/new/Shopify-Test/src/server.ts:17:24
-    at step (/Users/new/Shopify-Test/src/server.ts:52:23)
-    at Object.next (/Users/new/Shopify-Test/src/server.ts:33:53)
-    at fulfilled (/Users/new/Shopify-Test/src/server.ts:24:58)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-2021-12-31 08:43:50 error: uncaughtException: authentication_controller_1.default is not a constructor
-TypeError: authentication_controller_1.default is not a constructor
-    at /Users/new/Shopify-Test/src/server.ts:17:24
-    at step (/Users/new/Shopify-Test/src/server.ts:52:23)
-    at Object.next (/Users/new/Shopify-Test/src/server.ts:33:53)
-    at fulfilled (/Users/new/Shopify-Test/src/server.ts:24:58)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-2021-12-31 08:43:57 error: uncaughtException: authentication_controller_1.default is not a constructor
-TypeError: authentication_controller_1.default is not a constructor
-    at /Users/new/Shopify-Test/src/server.ts:17:24
-    at step (/Users/new/Shopify-Test/src/server.ts:52:23)
-    at Object.next (/Users/new/Shopify-Test/src/server.ts:33:53)
-    at fulfilled (/Users/new/Shopify-Test/src/server.ts:24:58)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-2021-12-31 08:45:56 error: uncaughtException: authentication_controller_1.default is not a constructor
-TypeError: authentication_controller_1.default is not a constructor
-    at /Users/new/Shopify-Test/src/server.ts:17:24
-    at step (/Users/new/Shopify-Test/src/server.ts:52:23)
-    at Object.next (/Users/new/Shopify-Test/src/server.ts:33:53)
-    at fulfilled (/Users/new/Shopify-Test/src/server.ts:24:58)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-2021-12-31 08:46:08 error: uncaughtException: authentication_controller_1.default is not a constructor
-TypeError: authentication_controller_1.default is not a constructor
-    at /Users/new/Shopify-Test/src/server.ts:17:24
-    at step (/Users/new/Shopify-Test/src/server.ts:52:23)
-    at Object.next (/Users/new/Shopify-Test/src/server.ts:33:53)
-    at fulfilled (/Users/new/Shopify-Test/src/server.ts:24:58)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-2021-12-31 08:53:31 error: uncaughtException: authentication_controller_1.default is not a constructor
-TypeError: authentication_controller_1.default is not a constructor
-    at /Users/new/Shopify-Test/src/server.ts:17:24
-    at step (/Users/new/Shopify-Test/src/server.ts:52:23)
-    at Object.next (/Users/new/Shopify-Test/src/server.ts:33:53)
-    at fulfilled (/Users/new/Shopify-Test/src/server.ts:24:58)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-2021-12-31 09:13:36 error: uncaughtException: authentication_controller_1.default is not a constructor
-TypeError: authentication_controller_1.default is not a constructor
-    at /Users/new/Shopify-Test/src/server.ts:17:24
-    at step (/Users/new/Shopify-Test/src/server.ts:52:23)
-    at Object.next (/Users/new/Shopify-Test/src/server.ts:33:53)
-    at fulfilled (/Users/new/Shopify-Test/src/server.ts:24:58)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-2021-12-31 09:14:07 error: uncaughtException: authentication_controller_1.default is not a constructor
-TypeError: authentication_controller_1.default is not a constructor
-    at /Users/new/Shopify-Test/src/server.ts:17:24
-    at step (/Users/new/Shopify-Test/src/server.ts:52:23)
-    at Object.next (/Users/new/Shopify-Test/src/server.ts:33:53)
-    at fulfilled (/Users/new/Shopify-Test/src/server.ts:24:58)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-2021-12-31 09:30:15 error: uncaughtException: ⨯ Unable to compile TypeScript:
-[96msrc/authentication/auth.service.ts[0m:[93m72[0m:[93m77[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/Users/new/Shopify-Test/src/authentication/auth.service.ts:9:1)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1056:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1059:12)
+2021-12-31 16:29:05 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/authentication/authentication.controller.ts[0m:[93m52[0m:[93m31[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
 
-[7m72[0m     const dataStoredInToken: DataStoredInToken = { id: user.id, email:user. };
-[7m  [0m [91m                                                                            ~[0m
+[7m52[0m       const user = await this..findOne({ where: { id } });
+[7m  [0m [91m                              ~[0m
 
 TSError: ⨯ Unable to compile TypeScript:
-[96msrc/authentication/auth.service.ts[0m:[93m72[0m:[93m77[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+[96msrc/authentication/authentication.controller.ts[0m:[93m52[0m:[93m31[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
 
-[7m72[0m     const dataStoredInToken: DataStoredInToken = { id: user.id, email:user. };
-[7m  [0m [91m                                                                            ~[0m
+[7m52[0m       const user = await this..findOne({ where: { id } });
+[7m  [0m [91m                              ~[0m
 
     at createTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:513:12)
     at reportTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:517:19)
@@ -127,17 +150,97 @@ TSError: ⨯ Unable to compile TypeScript:
     at Module.load (node:internal/modules/cjs/loader:981:32)
     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
     at Module.require (node:internal/modules/cjs/loader:1005:19)
-2021-12-31 09:31:28 error: uncaughtException: ⨯ Unable to compile TypeScript:
-[96msrc/authentication/auth.service.ts[0m:[93m72[0m:[93m96[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+2021-12-31 16:31:02 error: uncaughtException: Unexpected strict mode reserved word
+/Users/new/Shopify-Test/src/authentication/auth.service.ts:85
+        this.user = yield this.userRepository.findOne({ where: { id: id } });
+                    ^^^^^
 
-[7m72[0m     const dataStoredInToken: DataStoredInToken = { id: user.id, email: user.email, name: user. };
-[7m  [0m [91m                                                                                               ~[0m
+SyntaxError: Unexpected strict mode reserved word
+    at Object.compileFunction (node:vm:352:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
+    at Module._compile (node:internal/modules/cjs/loader:1065:27)
+    at Module.m._compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1056:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1059:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+2021-12-31 16:31:19 error: uncaughtException: Unexpected strict mode reserved word
+/Users/new/Shopify-Test/src/authentication/auth.service.ts:85
+        this.user = yield this.userRepository.findOne({ where: { id: id } });
+                    ^^^^^
+
+SyntaxError: Unexpected strict mode reserved word
+    at Object.compileFunction (node:vm:352:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
+    at Module._compile (node:internal/modules/cjs/loader:1065:27)
+    at Module.m._compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1056:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1059:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+2021-12-31 16:31:28 error: uncaughtException: Unexpected strict mode reserved word
+/Users/new/Shopify-Test/src/authentication/auth.service.ts:85
+        this.user = yield this.userRepository.findOne({ where: { id: id } });
+                    ^^^^^
+
+SyntaxError: Unexpected strict mode reserved word
+    at Object.compileFunction (node:vm:352:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
+    at Module._compile (node:internal/modules/cjs/loader:1065:27)
+    at Module.m._compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1056:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1059:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+2021-12-31 16:31:34 error: uncaughtException: Unexpected strict mode reserved word
+/Users/new/Shopify-Test/src/authentication/auth.service.ts:85
+        this.user = yield this.userRepository.findOne({ where: { id: id } });
+                    ^^^^^
+
+SyntaxError: Unexpected strict mode reserved word
+    at Object.compileFunction (node:vm:352:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
+    at Module._compile (node:internal/modules/cjs/loader:1065:27)
+    at Module.m._compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1056:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1059:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+2021-12-31 16:31:48 error: uncaughtException: Unexpected strict mode reserved word
+/Users/new/Shopify-Test/src/authentication/auth.service.ts:85
+        this.user = yield this.userRepository.findOne({ where: { id: id } });
+                    ^^^^^
+
+SyntaxError: Unexpected strict mode reserved word
+    at Object.compileFunction (node:vm:352:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
+    at Module._compile (node:internal/modules/cjs/loader:1065:27)
+    at Module.m._compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1056:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1059:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+2021-12-31 16:37:25 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/authentication/authentication.controller.ts[0m:[93m55[0m:[93m5[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m55[0m     } catch (err) {
+[7m  [0m [91m    ~[0m
 
 TSError: ⨯ Unable to compile TypeScript:
-[96msrc/authentication/auth.service.ts[0m:[93m72[0m:[93m96[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+[96msrc/authentication/authentication.controller.ts[0m:[93m55[0m:[93m5[0m - [91merror[0m[90m TS1109: [0mExpression expected.
 
-[7m72[0m     const dataStoredInToken: DataStoredInToken = { id: user.id, email: user.email, name: user. };
-[7m  [0m [91m                                                                                               ~[0m
+[7m55[0m     } catch (err) {
+[7m  [0m [91m    ~[0m
 
     at createTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:513:12)
     at reportTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:517:19)
@@ -149,17 +252,17 @@ TSError: ⨯ Unable to compile TypeScript:
     at Module.load (node:internal/modules/cjs/loader:981:32)
     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
     at Module.require (node:internal/modules/cjs/loader:1005:19)
-2021-12-31 09:43:15 error: uncaughtException: ⨯ Unable to compile TypeScript:
-[96msrc/authentication/authentication.controller.ts[0m:[93m36[0m:[93m76[0m - [91merror[0m[90m TS1005: [0m',' expected.
+2021-12-31 16:37:27 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/authentication/authentication.controller.ts[0m:[93m55[0m:[93m5[0m - [91merror[0m[90m TS1109: [0mExpression expected.
 
-[7m36[0m       const { tokenData  = await this.authenticationService.login(userData);
-[7m  [0m [91m                                                                           ~[0m
+[7m55[0m     } catch (err) {
+[7m  [0m [91m    ~[0m
 
 TSError: ⨯ Unable to compile TypeScript:
-[96msrc/authentication/authentication.controller.ts[0m:[93m36[0m:[93m76[0m - [91merror[0m[90m TS1005: [0m',' expected.
+[96msrc/authentication/authentication.controller.ts[0m:[93m55[0m:[93m5[0m - [91merror[0m[90m TS1109: [0mExpression expected.
 
-[7m36[0m       const { tokenData  = await this.authenticationService.login(userData);
-[7m  [0m [91m                                                                           ~[0m
+[7m55[0m     } catch (err) {
+[7m  [0m [91m    ~[0m
 
     at createTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:513:12)
     at reportTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:517:19)
@@ -171,3 +274,248 @@ TSError: ⨯ Unable to compile TypeScript:
     at Module.load (node:internal/modules/cjs/loader:981:32)
     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
     at Module.require (node:internal/modules/cjs/loader:1005:19)
+2021-12-31 16:37:29 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/authentication/authentication.controller.ts[0m:[93m55[0m:[93m5[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m55[0m     } catch (err) {
+[7m  [0m [91m    ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/authentication/authentication.controller.ts[0m:[93m55[0m:[93m5[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m55[0m     } catch (err) {
+[7m  [0m [91m    ~[0m
+
+    at createTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:513:12)
+    at reportTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:517:19)
+    at getOutput (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:955:34)
+    at Object.compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:968:32)
+    at Module.m._compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1056:42)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1059:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2021-12-31 16:37:31 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/authentication/authentication.controller.ts[0m:[93m55[0m:[93m5[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m55[0m     } catch (err) {
+[7m  [0m [91m    ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/authentication/authentication.controller.ts[0m:[93m55[0m:[93m5[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m55[0m     } catch (err) {
+[7m  [0m [91m    ~[0m
+
+    at createTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:513:12)
+    at reportTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:517:19)
+    at getOutput (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:955:34)
+    at Object.compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:968:32)
+    at Module.m._compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1056:42)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1059:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2021-12-31 16:44:18 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/authentication/auth.service.ts[0m:[93m94[0m:[93m5[0m - [91merror[0m[90m TS1068: [0mUnexpected token. A constructor, method, accessor, or property was expected.
+
+[7m94[0m     return {
+[7m  [0m [91m    ~~~~~~[0m
+[96msrc/authentication/auth.service.ts[0m:[93m97[0m:[93m3[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m97[0m   }
+[7m  [0m [91m  ~[0m
+[96msrc/authentication/auth.service.ts[0m:[93m99[0m:[93m1[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m99[0m }
+[7m  [0m [91m~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/authentication/auth.service.ts[0m:[93m94[0m:[93m5[0m - [91merror[0m[90m TS1068: [0mUnexpected token. A constructor, method, accessor, or property was expected.
+
+[7m94[0m     return {
+[7m  [0m [91m    ~~~~~~[0m
+[96msrc/authentication/auth.service.ts[0m:[93m97[0m:[93m3[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m97[0m   }
+[7m  [0m [91m  ~[0m
+[96msrc/authentication/auth.service.ts[0m:[93m99[0m:[93m1[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m99[0m }
+[7m  [0m [91m~[0m
+
+    at createTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:513:12)
+    at reportTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:517:19)
+    at getOutput (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:955:34)
+    at Object.compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:968:32)
+    at Module.m._compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1056:42)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1059:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2021-12-31 16:48:01 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/authentication/auth.service.ts[0m:[93m92[0m:[93m10[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m92[0m     if ( )
+[7m  [0m [91m         ~[0m
+[96msrc/authentication/auth.service.ts[0m:[93m95[0m:[93m3[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m95[0m   }
+[7m  [0m [91m  ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/authentication/auth.service.ts[0m:[93m92[0m:[93m10[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m92[0m     if ( )
+[7m  [0m [91m         ~[0m
+[96msrc/authentication/auth.service.ts[0m:[93m95[0m:[93m3[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m95[0m   }
+[7m  [0m [91m  ~[0m
+
+    at createTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:513:12)
+    at reportTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:517:19)
+    at getOutput (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:955:34)
+    at Object.compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:968:32)
+    at Module.m._compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1056:42)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1059:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2021-12-31 16:48:03 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/authentication/auth.service.ts[0m:[93m95[0m:[93m3[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m95[0m   }
+[7m  [0m [91m  ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/authentication/auth.service.ts[0m:[93m95[0m:[93m3[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m95[0m   }
+[7m  [0m [91m  ~[0m
+
+    at createTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:513:12)
+    at reportTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:517:19)
+    at getOutput (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:955:34)
+    at Object.compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:968:32)
+    at Module.m._compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1056:42)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1059:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2021-12-31 16:48:06 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/authentication/auth.service.ts[0m:[93m95[0m:[93m3[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m95[0m   }
+[7m  [0m [91m  ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/authentication/auth.service.ts[0m:[93m95[0m:[93m3[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m95[0m   }
+[7m  [0m [91m  ~[0m
+
+    at createTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:513:12)
+    at reportTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:517:19)
+    at getOutput (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:955:34)
+    at Object.compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:968:32)
+    at Module.m._compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1056:42)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1059:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2021-12-31 16:48:41 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/authentication/auth.service.ts[0m:[93m95[0m:[93m64[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m95[0m       const hashedPassword = await bcrypt.hash(passwordNew, 10){
+[7m  [0m [91m                                                               ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/authentication/auth.service.ts[0m:[93m95[0m:[93m64[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m95[0m       const hashedPassword = await bcrypt.hash(passwordNew, 10){
+[7m  [0m [91m                                                               ~[0m
+
+    at createTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:513:12)
+    at reportTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:517:19)
+    at getOutput (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:955:34)
+    at Object.compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:968:32)
+    at Module.m._compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1056:42)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1059:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2021-12-31 16:50:31 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/authentication/auth.service.ts[0m:[93m98[0m:[93m5[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+
+[7m98[0m     }
+[7m  [0m [91m    ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/authentication/auth.service.ts[0m:[93m98[0m:[93m5[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+
+[7m98[0m     }
+[7m  [0m [91m    ~[0m
+
+    at createTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:513:12)
+    at reportTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:517:19)
+    at getOutput (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:955:34)
+    at Object.compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:968:32)
+    at Module.m._compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1056:42)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1059:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2021-12-31 16:58:02 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/authentication/auth.service.ts[0m:[93m97[0m:[93m12[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+
+[7m97[0m       this..save(findUser);
+[7m  [0m [91m           ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/authentication/auth.service.ts[0m:[93m97[0m:[93m12[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+
+[7m97[0m       this..save(findUser);
+[7m  [0m [91m           ~[0m
+
+    at createTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:513:12)
+    at reportTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:517:19)
+    at getOutput (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:955:34)
+    at Object.compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:968:32)
+    at Module.m._compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1056:42)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1059:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2021-12-31 16:59:49 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/authentication/authentication.controller.ts[0m:[93m21[0m:[93m74[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+
+[7m21[0m     this.router.post(`${this.path}/changePassword`, authMiddleware, this.);
+[7m  [0m [91m                                                                         ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/authentication/authentication.controller.ts[0m:[93m21[0m:[93m74[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+
+[7m21[0m     this.router.post(`${this.path}/changePassword`, authMiddleware, this.);
+[7m  [0m [91m                                                                         ~[0m
+
+    at createTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:513:12)
+    at reportTSError (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:517:19)
+    at getOutput (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:955:34)
+    at Object.compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:968:32)
+    at Module.m._compile (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1056:42)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/new/Shopify-Test/node_modules/ts-node/src/index.ts:1059:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2021-12-31 17:01:51 error: jwt expired

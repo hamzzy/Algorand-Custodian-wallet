@@ -107,3 +107,26 @@ export class TransactionHistory {
   @UpdateDateColumn()
   public update_date: string;
 }
+
+@Entity()
+export class AddressContact {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column()
+  address: string;
+
+  @OneToMany(() => User, (user) => user, {
+    cascade: true,
+    eager: true,
+    onDelete: 'CASCADE',
+  })
+  @JoinColumn()
+  user: User[];
+
+  @CreateDateColumn()
+  public created_date: string;
+
+  @UpdateDateColumn()
+  public update_date: string;
+}

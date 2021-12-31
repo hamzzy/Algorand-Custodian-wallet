@@ -10,6 +10,7 @@ import { Wallet } from '../wallet/wallet.entity';
 import { DataStoredInToken, TokenData } from '../interfaces/auth.interface';
 import { compare } from 'bcryptjs';
 import LoginDto from './login.dto';
+import 'dotenv/config';
 
 class AuthenticationService {
   private userRepository = getRepository(User);
@@ -69,7 +70,7 @@ class AuthenticationService {
 
   public createToken(user: User): TokenData {
     const dataStoredInToken: DataStoredInToken = { id: user.id };
-    const secretKey: string = process.env['secret_key'];
+    const secretKey: string = process.env.secret_key;
     const expiresIn: number = 60 * 60;
 
     return { expiresIn, token: sign(dataStoredInToken, secretKey, { expiresIn }) };
@@ -77,6 +78,24 @@ class AuthenticationService {
 
   public createCookie(tokenData: TokenData): string {
     return `Authorization=${tokenData.token}; HttpOnly; Max-Age=${tokenData.expiresIn};`;
+  }
+
+  public async UpdatePassword(password: string, passwordNew: string, email: string) {
+    if (isEmpty(password)) throw new HttpException(400, 'password cannot be empty');
+    if (isEmpty(passwordNew)) throw new HttpException(400, 'password cannot be empty');
+
+    const findUser: User = await this.userRepository.findOne({ where: { email: email } });
+
+    const isPasswordMatching: boolean = await compare(password, findUser.password);
+    if (!isPasswordMatching) throw new HttpException(409, 'incorrect password');
+
+    if (isPasswordMatching) {
+      const hashedPassword = await bcrypt.hash(passwordNew, 10);
+      findUser.password = hashedPassword;
+      this.userRepository.save(findUser);
+    }
+
+    return 'done';
   }
 }
 
