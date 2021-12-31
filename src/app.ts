@@ -1,14 +1,19 @@
 import * as bodyParser from 'body-parser';
-import * as cookieParser from 'cookie-parser';
-import * as express from 'express';
+import cookieParser from 'cookie-parser';
+import express from 'express';
 import Controller from './interfaces/controller.interface';
 import errorMiddleware from './middleware/error.middleware';
+import { logger } from './utils/logger';
 
 class App {
   private app: express.Application;
+  public port: string | number;
+  public env: string;
 
   constructor(controllers: Controller[]) {
     this.app = express();
+    this.port = process.env.PORT || 3000;
+    this.env = process.env.NODE_ENV || 'development';
 
     this.initializeMiddlewares();
     this.initializeControllers(controllers);
@@ -16,8 +21,11 @@ class App {
   }
 
   public listen() {
-    this.app.listen(process.env.PORT, () => {
-      console.log(`App listening on the port ${process.env.PORT}`);
+    this.app.listen(this.port, () => {
+      logger.info(`=================================`);
+      logger.info(`======= ENV: ${this.env} =======`);
+      logger.info(`🚀 App listening on the port ${this.port}`);
+      logger.info(`=================================`);
     });
   }
 

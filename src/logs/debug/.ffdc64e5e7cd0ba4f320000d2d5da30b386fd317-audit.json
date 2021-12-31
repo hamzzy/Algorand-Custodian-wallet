@@ -1,0 +1,19 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "/Users/new/Shopify-Test/src/logs/debug/.ffdc64e5e7cd0ba4f320000d2d5da30b386fd317-audit.json",
+    "files": [
+        {
+            "date": 1640867772984,
+            "name": "/Users/new/Shopify-Test/src/logs/debug/2021-12-30.log",
+            "hash": "4384f906c5c2a9aca502ce4b76a7c850"
+        },
+        {
+            "date": 1640905289228,
+            "name": "/Users/new/Shopify-Test/src/logs/debug/2021-12-31.log",
+            "hash": "7abe873c702a016ae4224ea1640bb5d7"
+        }
+    ]
+}

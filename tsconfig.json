@@ -10,9 +10,12 @@
       "outDir": "./build",
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
+      "inlineSourceMap": true,
       "sourceMap": true,
       "allowSyntheticDefaultImports": true,
+      "strictPropertyInitialization": false,
       "esModuleInterop": true,
+      
    },
    "include": [
       "src/**/*.ts"
