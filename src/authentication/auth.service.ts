@@ -6,7 +6,7 @@ import CreateUserDto from '../authentication/user.dto';
 import User from '../authentication/user.entity';
 import HttpException from '../exceptions/HttpException';
 import { CreateAlgoWallet, isEmpty } from '../utils/utils';
-import { Wallet } from '../wallet/wallet.entity';
+import { Wallet, WalletBalance } from '../wallet/wallet.entity';
 import { DataStoredInToken, TokenData } from '../interfaces/auth.interface';
 import { compare } from 'bcryptjs';
 import LoginDto from './login.dto';
@@ -15,6 +15,7 @@ import 'dotenv/config';
 class AuthenticationService {
   private userRepository = getRepository(User);
   private WalletRepository = getRepository(Wallet);
+  private BalanceRepository = getRepository(WalletBalance);
 
   public async register(userData: CreateUserDto) {
     if (isEmpty(userData)) throw new HttpException(400, "You're not userData");
@@ -38,6 +39,8 @@ class AuthenticationService {
         user: user,
       });
       await this.WalletRepository.save(Wallet);
+      const balance = this.BalanceRepository.create({ amount: 0.0, user: user, wallet: Wallet });
+      await this.BalanceRepository.save(balance);
     }
     return {
       user,
@@ -80,7 +83,7 @@ class AuthenticationService {
     return `Authorization=${tokenData.token}; HttpOnly; Max-Age=${tokenData.expiresIn};`;
   }
 
-  public async UpdatePassword(password: string, passwordNew: string, email: string) {
+  public async UpdatePassword(password?: string, passwordNew?: string, email?: string) {
     if (isEmpty(password)) throw new HttpException(400, 'password cannot be empty');
     if (isEmpty(passwordNew)) throw new HttpException(400, 'password cannot be empty');
 

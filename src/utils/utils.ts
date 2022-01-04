@@ -1,5 +1,43 @@
-import { generateAlgoWallet, algorandGetAccountBalance } from '@tatumio/tatum';
-import { generateMnemonic, mnemonicToSeed } from 'bip39';
+import {
+  generateAlgoWallet,
+  algorandGetAccountBalance,
+  sendAlgoSignedTransaction,
+  algorandGetTransaction,
+  AlgoTransaction,
+  prepareAlgoSignedTransaction,
+  Currency
+} from '@tatumio/tatum';
+import axios from 'axios';
+import { Transaction } from 'typeorm';
+import { add } from 'winston';
+import HttpException from '../exceptions/HttpException';
+const instance = axios.create({
+  baseURL: 'https://api-eu1.tatum.io/',
+  headers: { 'x-api-key': process.env.TATUM_API_KEY || '' },
+});
+
+export interface Transaction {
+  from: string;
+  to: string;
+  fee: string;
+  amount: string;
+  note: string;
+  fromPrivateKey: string;
+}
+
+export const Transact = (data: Transaction): Promise<any> => {
+  return instance.post('v3/algorand/transaction', data);
+};
+
+export const TransactHistroy = (data: string): Promise<any> => {
+  return axios.request({
+    method: 'get',
+    url: `https://api-eu1.tatum.io/v3/algorand/transaction/${data}`,
+    headers: {
+      'x-api-key': process.env.TATUM_API_KEY || '',
+    },
+  });
+};
 /**
  * @method isEmpty
  * @param {String | Number | Object} value
@@ -7,7 +45,6 @@ import { generateMnemonic, mnemonicToSeed } from 'bip39';
  * @description this value is Empty Check
  */
 export const isEmpty = (value: string | number | object): boolean => {
-  1;
   if (value === null) {
     return true;
   } else if (typeof value !== 'number' && value === '') {
@@ -33,4 +70,31 @@ export const CreateAlgoWallet = async () => {
 export const AlgoWalletBalance = async (address?: string) => {
   const balance = await algorandGetAccountBalance(address);
   return balance;
+};
+
+function sleep(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+export const AlgoTransactions = async (tx: Transaction, key: string) => {
+  tx.fromPrivateKey = key;
+  const txId = await Transact(tx);
+  if (txId.data) {
+    await sleep(9000);
+    const tran_history = await algorandGetTransaction(txId.data);
+    console.log(tran_history);
+
+    return {
+      transaction_hash: txId.data,
+      recipient: tx.to,
+      amount: tran_history.paymentTransaction.amount,
+      network_fee: tran_history.fee,
+      status: tran_history.txType,
+    };
+  }
+};
+
+export const UserNFTS = async (address: string) => {
+  return await instance.post(`/v3/nft/address/balance/${Currency.ALGO}/${address}`);
 };

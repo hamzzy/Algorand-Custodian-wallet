@@ -1,4 +1,14 @@
-import { Column, Entity, JoinColumn, BaseEntity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  BaseEntity,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+  OneToMany,
+} from 'typeorm';
+import { AddressContact, TransactionHistory, Wallet } from '../wallet/wallet.entity';
 
 @Entity()
 class User extends BaseEntity {
@@ -13,6 +23,12 @@ class User extends BaseEntity {
 
   @Column()
   public password: string;
+
+  @OneToMany(() => TransactionHistory, (history) => history.user)
+  transactHistroy: TransactionHistory;
+
+  @OneToMany(() => AddressContact, (contact) => contact.user)
+  contact: AddressContact;
 
   @CreateDateColumn()
   public created_date: string;

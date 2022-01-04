@@ -30,6 +30,9 @@ export class Wallet {
   @JoinColumn()
   user: User;
 
+  @OneToMany(() => TransactionHistory, (history) => history.wallet)
+  transactHistroy: TransactionHistory;
+
   @CreateDateColumn()
   public created_date: string;
 
@@ -43,7 +46,7 @@ export class WalletBalance {
   id: number;
 
   @Column()
-  amount: number;
+  amount: string;
 
   @OneToOne(() => User, {
     cascade: true,
@@ -87,19 +90,11 @@ export class TransactionHistory {
   @Column()
   amount: string;
 
-  @OneToMany(() => User, (user) => user, {
-    cascade: true,
-    eager: true,
-    onDelete: 'CASCADE',
-  })
-  user: User[];
+  @ManyToOne(() => User, (user) => user.transactHistroy)
+  user: User;
 
-  @OneToMany(() => Wallet, (wallet) => wallet, {
-    cascade: true,
-    eager: true,
-    onDelete: 'CASCADE',
-  })
-  wallet: Wallet[];
+  @ManyToOne(() => Wallet, (wallet) => wallet.transactHistroy)
+  wallet: Wallet;
 
   @CreateDateColumn()
   public created_date: string;
@@ -116,13 +111,8 @@ export class AddressContact {
   @Column()
   address: string;
 
-  @OneToMany(() => User, (user) => user, {
-    cascade: true,
-    eager: true,
-    onDelete: 'CASCADE',
-  })
-  @JoinColumn()
-  user: User[];
+  @ManyToOne(() => User, (user) => user.contact)
+  user: User;
 
   @CreateDateColumn()
   public created_date: string;

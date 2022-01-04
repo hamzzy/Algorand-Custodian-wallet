@@ -1,4 +1,15 @@
-import { IsOptional, IsString, ValidateNested, Min } from 'class-validator';
+import {
+  IsString,
+  ValidateNested,
+  Min,
+  IsNotEmpty,
+  IsNumberString,
+  IsOptional,
+  Length,
+  Matches,
+  MaxLength,
+} from 'class-validator';
+import { StringLiteralLike } from 'typescript';
 
 class CreateUserDto {
   @IsString()
