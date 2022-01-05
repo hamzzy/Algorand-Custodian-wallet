@@ -4,6 +4,7 @@ import { getRepository } from 'typeorm';
 // import UserWithThatEmailAlreadyExistsException from '../exceptions/UserWithThatEmailAlreadyExistsException';
 import User from '../authentication/user.entity';
 import HttpException from '../exceptions/HttpException';
+import { TransactionHistoryType } from '../interfaces/wallet.interface';
 import { CreateAlgoWallet, AlgoTransactions, AlgoWalletBalance } from '../utils/utils';
 import { Wallet, WalletBalance, TransactionHistory } from '../wallet/wallet.entity';
 import { AlgoTransaction } from './transaction.dto';
@@ -14,22 +15,22 @@ class WalletService {
   private WalletBalance = getRepository(WalletBalance);
   private History = getRepository(TransactionHistory);
 
-  public async balance(user_id: string): Promise<void> {
+  public async balance(user_id: string) {
     const data = await this.WalletBalance.findOne({ where: { user: user_id } });
     return { amount: data.amount };
   }
 
-  public async Transaction(AlgoTranData: AlgoTransaction, email?: string, user_id?: string): Promise<void> {
+  public async Transaction(AlgoTranData: AlgoTransaction, email?: string, user_id?: string) {
     const findUser: User = await this.userRepository.findOne({ where: { email: email } });
-    const wallet = await this.WalletRepository.findOne({ user: findUser.id });
+    const wallet = await this.WalletRepository.findOne({ where: { user: findUser.id } });
     const walletBal: WalletBalance = await this.WalletBalance.findOne({ where: { user: findUser.id, wallet: wallet.id } });
     if (Number(walletBal.amount) < Number(AlgoTranData.amount)) throw new HttpException(403, "you don't enought algo");
     if (Number(walletBal.amount) == Number(AlgoTranData.amount)) throw new HttpException(403, "you don't enought algo");
 
-    const Trans = await AlgoTransactions(AlgoTranData, wallet.private_key);
+    const Trans: TransactionHistoryType = await AlgoTransactions(AlgoTranData, wallet.private_key);
     if (Trans) {
       const balance = await AlgoWalletBalance(wallet.public_key);
-      walletBal.amount = balance;
+      walletBal.amount = String(balance);
       await this.WalletBalance.save(walletBal);
 
       const history = this.History.create({
@@ -46,7 +47,7 @@ class WalletService {
     return Trans;
   }
 
-  public async UserTransactionHistory(user_id: string): Promise<void> {
+  public async UserTransactionHistory(user_id: string): Promise<any> {
     const history = await this.History.find({
       where: { user: user_id },
       order: {

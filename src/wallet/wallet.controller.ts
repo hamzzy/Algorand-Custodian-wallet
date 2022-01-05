@@ -18,14 +18,9 @@ class WalletController implements Controller {
     this.router.get(`${this.path}/balance`, authMiddleware, this.WalletBalance);
     this.router.post(`${this.path}/sendAlgo`, authMiddleware, this.SendTransaction);
     this.router.get(`${this.path}/transactionHistory`, authMiddleware, this.TransactionHistory);
-
   }
 
-  private WalletBalance = async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction
-  ): Promise<void> => {
+  private WalletBalance = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     try {
       const { id, email, pasword } = request.user;
       const balance = await this.walletService.balance(id);
@@ -35,11 +30,7 @@ class WalletController implements Controller {
     }
   };
 
-  private SendTransaction = async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction
-  ): Promise<void> => {
+  private SendTransaction = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     try {
       const AlgoTransactionData: AlgoTransaction = request.body;
       const { id, email } = request.user;
@@ -51,13 +42,7 @@ class WalletController implements Controller {
     }
   };
 
-
-
-  private TransactionHistory = async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction
-  ): Promise<void> => {
+  private TransactionHistory = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     try {
       const { id, email } = request.user;
       const transaction = await this.walletService.UserTransactionHistory(id);

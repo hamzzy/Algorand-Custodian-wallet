@@ -8,22 +8,13 @@ import {
   Currency
 } from '@tatumio/tatum';
 import axios from 'axios';
-import { Transaction } from 'typeorm';
 import { add } from 'winston';
 import HttpException from '../exceptions/HttpException';
+import { Transaction } from '../interfaces/wallet.interface';
 const instance = axios.create({
   baseURL: 'https://api-eu1.tatum.io/',
   headers: { 'x-api-key': process.env.TATUM_API_KEY || '' },
 });
-
-export interface Transaction {
-  from: string;
-  to: string;
-  fee: string;
-  amount: string;
-  note: string;
-  fromPrivateKey: string;
-}
 
 export const Transact = (data: Transaction): Promise<any> => {
   return instance.post('v3/algorand/transaction', data);
@@ -86,7 +77,7 @@ export const AlgoTransactions = async (tx: Transaction, key: string) => {
     console.log(tran_history);
 
     return {
-      transaction_hash: txId.data,
+      transaction_hash: String(txId.data),
       recipient: tx.to,
       amount: tran_history.paymentTransaction.amount,
       network_fee: tran_history.fee,
